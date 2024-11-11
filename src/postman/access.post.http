@@ -1,0 +1,10 @@
+@urlDev=http://localhost:3056/v1/api/
+POST {{urlDev}}/shop/signup
+Content-Type: application/json
+x-api-key: 933f8a2d7a969d80952c5cb493e6a40a3c65c9cf2b7a7822a1cadd96cddd495a464cca64eedc65e0f206240656530d468aceaf56c02cb9ca3540bf6d404dda4b
+
+{
+    "name": "Vu The Vinh",
+    "email": "Vinhtiensinh17@gmail.com",
+    "password": "123456"
+}
