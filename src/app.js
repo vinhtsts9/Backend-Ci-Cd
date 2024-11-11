@@ -13,12 +13,12 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-const initElasticSearch = require('./dbs/init.elasticsearch')
+/* const initElasticSearch = require('./dbs/init.elasticsearch')
 initElasticSearch.init({ ELASTICSEARCH_IS_ENABLE: true })
 require('./dbs/init.mongodb')
 const ioredis = require('./dbs/init.ioredis')
 ioredis.init({ IOREDIS_IS_ENABLE: true })
-
+*/
 
 require('./tests/inventory.test')
 const productTest = require('./tests/product.test')

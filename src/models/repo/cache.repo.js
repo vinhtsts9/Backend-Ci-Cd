@@ -1,5 +1,5 @@
 const { getRedisIo } = require('../../dbs/init.ioredis')
-const redisCache = getRedisIo().instanceConnect
+// const redisCache = getRedisIo().instanceConnect
 const setCache = async ({ key, value }) => {
     if (!redisCache) {
         throw new Error('Redis client not installed')
