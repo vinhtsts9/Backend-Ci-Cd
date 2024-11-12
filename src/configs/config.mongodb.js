@@ -3,7 +3,7 @@ const dev = {
         port: process.env.DEVAPPPORT || 3052,
     },
     db: {
-        host: process.env.DEVDBHOST || 'localhost',
+        host: process.env.DEVDBHOST || '172.31.22.129',
         port: process.env.DEVDBPORT || 27017,
         name: process.env.DEVDBNAME || 'shopDEV'
     }
@@ -13,7 +13,7 @@ const pro = {
         port: process.env.PROAPPPORT || 3000,
     },
     db: {
-        host: process.env.PRODBHOST || 'localhost',
+        host: process.env.PRODBHOST || '172.31.22.129',
         port: process.env.PRODBPORT || 27017,
         name: process.env.PRODBNAME || 'shopPRO'
     }

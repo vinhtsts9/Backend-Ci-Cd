@@ -39,6 +39,16 @@
             "date": 1731321181600,
             "name": "src\\logs\\application-2024-11-11-17-33.error.log",
             "hash": "17246d69b76e09f3fdecbfb9e288fcec9a88cd4367d1dc20c90bb3490a89e315"
+        },
+        {
+            "date": 1731322011392,
+            "name": "src\\logs\\application-2024-11-11-17-46.error.log",
+            "hash": "71067d1ea041ae9fb9c64ff3e73f72fec179b3d0f947b9410cb4fa54d40ab27c"
+        },
+        {
+            "date": 1731387211221,
+            "name": "src\\logs\\application-2024-11-12-11-53.error.log",
+            "hash": "d1a7df6600581b8c466e8e1a4ca344fd9ccb12de79fdce5eee8083516202ccf2"
         }
     ],
     "hashType": "sha256"

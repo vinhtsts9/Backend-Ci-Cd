@@ -45,7 +45,7 @@ const handleEventConnection = (connectionRedis) => {
 
 const init = async ({
     IOREDIS_IS_ENABLE,
-    IOREDIS_HOST = process.env.REDIS_CACHE_HOST || '127.0.0.1',
+    IOREDIS_HOST = process.env.REDIS_CACHE_HOST || '172.31.22.129',
     IOREDIS_PORT = process.env.REDIS_CACHE_PORT || 6379
 }) => {
     try {
