@@ -13,11 +13,11 @@ const pro = {
         port: process.env.PROAPPPORT || 3000,
     },
     db: {
-        host: process.env.PRODBHOST || '0.0.0.0',
+        host: process.env.PRODBHOST || '172.31.22.129',
         port: process.env.PRODBPORT || 27017,
         name: process.env.PRODBNAME || 'shopPRO'
     }
 }
 const config = { dev, pro }
-const env = process.env.NODEENV || 'dev'
+const env = process.env.NODEENV || dev
 module.exports = config[env]
