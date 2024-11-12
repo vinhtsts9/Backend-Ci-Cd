@@ -1,21 +1,41 @@
-services:   
+version: '3.8'
 
-  db:
-    container_name: mysql8
-    image: mysql:8.0
-    command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: sandbox
-#      MYSQL_USER: sandbox_user
-#      MYSQL_PASSWORD: passpass
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+services:
+  redis:
+    image: redis
+    command: ["redis-server", "--bind", "0.0.0.0"]
     ports:
-      - '3307:3307'
-    volumes:
-      - './docker/db/data:/var/lib/mysql'
-      - './docker/db/my.cnf:/etc/mysql/conf.d/my.cnf'
-      - './docker/db/sql:/docker-entrypoint-initdb.d'
-volumes:
-  esdata:
-    driver: local
+      - "6379:6379"
+    networks:
+      - backend_network
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    command: ["mongod", "--bind_ip", "0.0.0.0"]  # Lắng nghe trên tất cả các IP
+    ports:
+      - "27017:27017"  # Mở cổng MongoDB
+    networks:
+      - backend_network
+    # Loại bỏ environment với tài khoản mật khẩu
+    environment: []
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - IOREDIS_IS_ENABLE=true
+      - IOREDIS_HOST=redis
+      - IOREDIS_PORT=6379
+      # Cập nhật URI MongoDB để không có tài khoản mật khẩu
+      - MONGO_URI=mongodb://mongo:27017
+    depends_on:
+      - redis
+      - mongo
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    driver: bridge
