@@ -3,7 +3,7 @@ const dev = {
         port: process.env.DEVAPPPORT || 3052,
     },
     db: {
-        host: process.env.DEVDBHOST || '0.0.0.0',
+        host: /*process.env.DEVDBHOST ||*/ '0.0.0.0',
         port: process.env.DEVDBPORT || 27017,
         name: process.env.DEVDBNAME || 'shopDEV'
     }
@@ -19,5 +19,5 @@ const pro = {
     }
 }
 const config = { dev, pro }
-const env = process.env.NODEENV || dev
+const env = /*process.env.NODEENV ||*/ 'dev'
 module.exports = config[env]
