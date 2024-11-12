@@ -26,9 +26,7 @@ var shopSchema = new Schema({
     verify: {
         type: Schema.Types.Boolean,
         default: false
-    },
-    roles: {
-        type: Schema.Types.ObjectId, ref: 'Role'}
+    }
 }, {
     timestamps: true,
     collection: COLLECTIONNAME
